@@ -214,8 +214,8 @@ const dbDogs = async () => {
     throw new Error(error);
   }
 };
-mosule.exports = {
-  getAllDOgs,
+module.exports = {
+  getAllDogs,
   dbDogs,
   searchDogsByName,
   addDog,
