@@ -95,14 +95,7 @@ const getDetail = async (id) => {
 };
 
 const addDog = async (dog) => {
-  if (
-    !dog.name ||
-    !dog.imagen ||
-    !dog.peso ||
-    !dog.altura ||
-    !dog.life_span ||
-    !dog.temperament
-  )
+  if (!dog.name || !dog.imagen || !dog.peso || !dog.altura || !dog.life_span)
     throw new Error("data is missing");
 
   try {
@@ -159,7 +152,7 @@ const getDogBreeds = async (req, res) => {
   }
 };
 
-const searchDogsByName = async (name) => {
+async function searchDogsByName(name) {
   if (!name) throw new Error("No se ha pasado ningun nomre...");
 
   try {
@@ -202,7 +195,7 @@ const searchDogsByName = async (name) => {
   } catch (error) {
     throw new Error(error);
   }
-};
+}
 const dbDogs = async () => {
   try {
     const dbDogs = await Dog.findAll();

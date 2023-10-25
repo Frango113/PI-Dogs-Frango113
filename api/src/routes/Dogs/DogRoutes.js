@@ -17,19 +17,11 @@ router.get("/createrd", async (req, res) => {
     return res.status(400).json({ error: error.message });
   }
 });
-router.get("/:id", async (req, res) => {
-  const { id } = req.params;
-  try {
-    const response = await dogsController.getDetail(id);
-    return res.status(200).json(response);
-  } catch (error) {
-    return res.status(404).json({ message: error.message });
-  }
-});
+
 router.post("/", async (req, res) => {
   const perro = req.body;
   try {
-    const dog = await dogsController.addDOg(perro);
+    const dog = await dogsController.addDog(perro);
     return res.status(201).json(dog);
   } catch (error) {
     return res.status(400).json(error.message);
