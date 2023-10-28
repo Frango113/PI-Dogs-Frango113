@@ -1,0 +1,123 @@
+.component {
+    box-sizing: border-box;
+    display: grid;
+    width: 250px;
+    height: 500px;
+    margin-bottom: 30px;
+    transition: 200ms;
+  }
+  
+  .component {
+    border: 5px solid transparent;
+    border: 5px solid rgba(255,214,127,1);
+    background: transparent;
+    backdrop-filter: blur(6px);
+    box-shadow: 0px 10px 15px rgba(255,214,127,1);
+  }
+  
+  .component:hover {
+    box-shadow: 10px 15px 20px white, 5px 50px 20px rgba(255,214,127,1);
+  }
+  
+  /* .favorite {
+    background: linear-gradient(rgb(15,15,15), rgb(15,15,15)) padding-box,
+    linear-gradient(45deg, white, rgba(255,214,127,1)) border-box;
+    box-shadow: 0px 20px 15px rgba(255,214,127,1);
+  }
+  
+  .favorite:hover {
+    box-shadow: 0px 0px 20px rgb(54, 183, 54), 0px 0px 20px rgb(183, 255, 0);
+  } */
+  
+  .id {
+    display: grid;
+    width: 120px;
+    height: 30px;
+    font-size: 17px;
+    justify-self: center;
+    margin-top: 45px;
+  }
+  
+  .id h2 {
+    font-size: 25px;
+    align-self: center;
+    margin-top: -50px;
+    padding: 0;
+    background: -webkit-linear-gradient(45deg, white, rgba(255,214,127,1)) border-box;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
+  
+  .image {
+    display: grid;
+  }
+  
+  .image img {
+    display: grid;
+    justify-self: center;
+    margin-top: -50px;
+    width: 130px;
+    height: 130px;
+    box-shadow: 5px 10px 10px 5px  rgba(255,214,127,1);   
+    padding: 3px;
+    transition: 200ms;
+    margin-bottom: 10px;
+  }
+  
+  .buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  
+  .name {
+    padding-top: 70px;
+    font-size: 20px;
+    padding-bottom: 20px;
+    background: -webkit-linear-gradient(45deg, white, rgba(255,214,127,1)) border-box;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
+  
+  .dataContainer {
+    display: grid;
+    justify-self: center;
+    align-content: center;
+    width: 95%;
+    height: 100px;
+  }
+  
+  .data {
+    font-size: 20px;
+    margin-top: -50px;
+    padding-top: 10px;
+    background: -webkit-linear-gradient(45deg, white, rgba(255,214,127,1)) border-box;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    padding-top: 60px;
+  }
+  
+  .Value {
+    color: aqua;
+  }
+  
+  .masInfo {
+    width: 70px;
+    height: 30px;
+    color: rgba(255,214,127,1);
+    border: 2px solid transparent;
+    background: linear-gradient(black, black) padding-box,
+    linear-gradient(45deg, #fff, rgba(255,214,127,1)) border-box;
+    box-shadow: 2px 1px 2px 2px rgba(255,214,127,1);
+    transition: 200ms;
+    cursor: pointer;
+    font-weight: bolder;
+    font-family: 'Audiowide', cursive;
+    padding-right: 71px;
+    margin-top: 85px;
+  }
+  
+  .masInfo:hover {
+    scale: 0.9;
+    background-color: rgb(179, 120, 235);
+  }
