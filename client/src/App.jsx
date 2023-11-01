@@ -1,35 +1,63 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import style from "./App.css";
+//? importaciones REDUX
+import { useDispatch, useSelector } from "react-redux";
+import { clearDogs, allDogs } from "./Redux/actions";
+//?FIN IMPORT REDUX
+//! COMPONENTES
+import LandingPage from "./Components/Landing/LandingPage";
+import Cards from "./Components/Cards/Cards";
+import Navbar from "./Components/Navbar/NavBar";
+import Detail from "./Detail/Detail";
+import { Route } from "react-router-dom";
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const dogs = useSelector((state) => state.dogs);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    dispatch(clearDogs());
+    dispatch(allDogs());
+  }, []);
+
+  useEffect(() => {
+    dispatch(clearDogs) && navigate("/");
+  }, []);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className={style.App}>
+      <Routes>
+        <Route path="/" element={<LandingPage />}></Route>
+        <Route
+          path="/home"
+          element={
+            <>
+              <Navbar />
+              <Cards dogs={dogs}></Cards>
+            </>
+          }
+        />
+        <Route
+          path="/favorites"
+          element={
+            <>
+              <Navbar />
+            </>
+          }
+        />
+        <Route
+          path="/detail/:id"
+          element={
+            <>
+              <Navbar />
+              <Detail />
+            </>
+          }
+        />
+      </Routes>
+    </div>
+  );
 }
-
-export default App

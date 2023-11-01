@@ -1,0 +1,104 @@
+.searchBar {
+    display: grid;
+    justify-self: center;
+    align-content: center;
+    align-self: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    width: 450px;
+    height: 50px;
+    margin-left: 100px;
+    margin-right: 35px;
+  }
+  
+  .searchBar input {
+    width: 270px;
+    height: 35px;
+    font-size: 14px;
+    align-self: center;
+    box-shadow: 2px 1px 2px 2px rgba(255,214,127,1);
+    background-color: transparent;
+  }
+
+  .input{
+    color: white;
+    padding-left: 5%;
+    padding-top: 8px;
+  }
+
+  ::placeholder{
+    color: rgba(255,214,127,1);
+    background: -webkit-linear-gradient(45deg, #ffffff, rgba(255,214,127,1)) border-box;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 1px;
+    text-shadow:
+    -10px -1px 0 #000, /* Sombra superior izquierda */
+     1px -1px 0 #000, /* Sombra superior derecha */
+    -10px  1px 0 #000, /* Sombra inferior izquierda */
+     1px  1px 0 #000; /* Sombra inferior derecha */
+    font-family: 'Audiowide', cursive;
+    font-size: 18px;
+  }
+  .search {
+    display: grid;
+    width: 40px;
+    height: 40px;
+    align-content: center;
+    background: linear-gradient(45deg, white, rgba(255,214,127,1)) border-box;
+    color: aliceblue;
+    margin-left: 20px;
+    border-radius: 50%;
+    border: 0;
+  }
+  
+  .search:hover {
+    scale: 0.9;
+    background-color: rgba(255,214,127,1);
+    box-shadow: 0px 0px 5px rgba(255,214,127,1);
+  }
+  
+  .search img {
+    width: 27px;
+  }
+  
+
+
+  
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .rotating {
+    animation: rotate 2s linear infinite;
+    background-color: aquamarine;
+  }
+  
+  .rotating:hover {
+    scale: 0.9;
+    background-color: gray;
+    box-shadow: 0px 0px 5px gray;
+  }
+  
+  @media (max-width: 1280px) {
+    .searchBar {
+      width: 350px;
+    }
+    .searchBar input {
+      width: 150px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .searchBar {
+      margin-left: 0px;
+    }
+  
+    .searchBar input {
+      width: 150px;
+    }
+  }
