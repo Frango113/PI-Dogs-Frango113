@@ -31,7 +31,7 @@ export default function Filter() {
   };
   return (
     <div className={style.filters}>
-      <select name="order" value={order} onCHange={handleOrder}>
+      <select name="order" value={order} onChange={handleOrder}>
         <option value="A">A-Z</option>
         <option value="D">Z-A</option>
         <option value="maxWeight">HEAVIEST</option>

@@ -6,7 +6,7 @@
     gap: 17px;
     background-color: rgba(0, 0, 0, 0.445);
     background: linear-gradient(black, black) padding-box,
-    linear-gradient(45deg, white, rgba(255,214,127,1)) border-box;
+    linear-gradient(45deg, white, rgb(0, 10, 143)) border-box;
     margin-right: 60px;
   }
 
@@ -15,12 +15,12 @@
     height: 50px;
     width: 120px;
     align-self: center;
-    color: rgba(255,214,127,1);
+    color: rgb(0, 10, 143);
     font-size: 20px;
     padding-left: 8px;
     border-radius: 5px;
     font-weight: bolder;
-    background: -webkit-linear-gradient(45deg, #ffffff, rgba(255,214,127,1)) border-box;
+    background: -webkit-linear-gradient(45deg, #ffffff, rgb(0, 10, 143)) border-box;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     -webkit-text-stroke: 1px;
@@ -33,7 +33,7 @@
     border-radius: 20px;
     border: 5px solid transparent;
     background: linear-gradient(black, black) padding-box,
-    linear-gradient(45deg, white, rgba(255,214,127,1)) border-box;
+    linear-gradient(45deg, white, rgb(0, 10, 143)) border-box;
   }
 
   
@@ -42,12 +42,12 @@
     height: 60px;
     width: 115px;
     align-self: center;
-    color: rgba(255,214,127,1);
+    color: rgb(0, 10, 143);
     font-size: 18px;
     padding-left: 8px;
     border-radius: 5px;
     font-weight: bolder;
-    background: -webkit-linear-gradient(45deg, #ffffff, rgba(255,214,127,1)) border-box;
+    background: -webkit-linear-gradient(45deg, #ffffff, rgb(0, 10, 143)) border-box;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     -webkit-text-stroke: 1px;
@@ -60,5 +60,5 @@
     border-radius: 20px;
     border: 5px solid transparent;
     background: linear-gradient(black, black) padding-box,
-    linear-gradient(45deg, white, rgba(255,214,127,1)) border-box;
+    linear-gradient(45deg, white, rgb(0, 10, 143)) border-box;
   }

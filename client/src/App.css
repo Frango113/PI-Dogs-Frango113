@@ -3,7 +3,7 @@
   text-align: center;
   position: relative;
   min-height: 100vh;
-  background-image: url("../src/assets/background2.jpg");
+  background-image: url("../src/assets/background.jpg");
   background-size: cover;
   background-attachment: fixed; 
 }

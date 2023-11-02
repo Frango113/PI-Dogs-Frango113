@@ -18,14 +18,4 @@ router.get("/createrd", async (req, res) => {
   }
 });
 
-router.post("/", async (req, res) => {
-  const perro = req.body;
-  try {
-    const dog = await dogsController.addDog(perro);
-    return res.status(201).json(dog);
-  } catch (error) {
-    return res.status(400).json(error.message);
-  }
-});
-
 module.exports = router;

@@ -10,7 +10,7 @@ import {
   clearDogs,
 } from "../../Redux/actions";
 import { useSelector } from "react-redux";
-import style from "./SearchModule.css";
+import style from "./SearchBar.Module.css";
 
 export default function SearchBar() {
   const [name, setName] = useState("");
@@ -39,11 +39,11 @@ export default function SearchBar() {
     dispatch(filterTemperaments("All"));
   };
   return (
-    <div ClassName={StylePropertyMap.SearchBar}>
+    <div className={StylePropertyMap.SearchBar}>
       <input
         className={StylePropertyMap.input}
         type="search"
-        placeHolder="search for a name or ID"
+        placeholder="search for a name or ID"
         value={name}
         onChange={HandleChange}
       ></input>

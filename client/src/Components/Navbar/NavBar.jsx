@@ -43,7 +43,7 @@ export default function Navbar({ onSearch }) {
         >
           <h3>RESET</h3>
         </Link>
-        <div onCLick={toggleFormVisibility} className={style.aboutButton}>
+        <div onClick={toggleFormVisibility} className={style.aboutButton}>
           <h3>CREATE</h3>
         </div>
       </div>
