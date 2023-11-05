@@ -35,16 +35,16 @@ export default function Form() {
       !formData.imagen ||
       !formData.life_span
     ) {
-      alert("Por favor, complete los campos obligatorios.");
+      alert("Please fill the form with all the data");
       return;
     }
 
     let errorMessage = "";
 
     if (typeof formData.name !== "string") {
-      errorMessage = "El nombre debe ser una cadena de texto.";
+      errorMessage = "Name must be a text string";
     } else if (typeof formData.imagen !== "string") {
-      errorMessage = "La imagen debe ser una cadena de texto (URL).";
+      errorMessage = "Image must be an URL";
     } else if (
       isNaN(formData.minHeight) ||
       isNaN(formData.maxHeight) ||
@@ -120,7 +120,7 @@ export default function Form() {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                placeholder="Inserte Nombre"
+                placeholder="Insert Name"
               />
             </label>
             <label>
@@ -131,7 +131,7 @@ export default function Form() {
                 name="imagen"
                 value={formData.imagen}
                 onChange={handleChange}
-                placeholder="Inserte URL de imagen"
+                placeholder="Insert URL"
               />
             </label>
             <label>
@@ -142,7 +142,7 @@ export default function Form() {
                 name="minHeight"
                 value={formData.minHeight}
                 onChange={handleChange}
-                placeholder="Inserte Altura Minima"
+                placeholder="Insert Minimum height"
               />
             </label>
             <label>
@@ -153,7 +153,7 @@ export default function Form() {
                 name="maxHeight"
                 value={formData.maxHeight}
                 onChange={handleChange}
-                placeholder="Inserte Altura Maxima"
+                placeholder="Insert Maximum height"
               />
             </label>
             <label>
@@ -164,7 +164,7 @@ export default function Form() {
                 name="minWeight"
                 value={formData.minWeight}
                 onChange={handleChange}
-                placeholder="Inserte Peso Minimo"
+                placeholder="Insert Minimum weight"
               />
             </label>
             <label>
@@ -175,7 +175,7 @@ export default function Form() {
                 name="maxWeight"
                 value={formData.maxWeight}
                 onChange={handleChange}
-                placeholder="Inserte Peso Maximo"
+                placeholder="Insert Maximum Weight"
               />
             </label>
             <label>
@@ -186,7 +186,7 @@ export default function Form() {
                 name="life_span"
                 value={formData.life_span}
                 onChange={handleChange}
-                placeholder="Inserte Años de Vida"
+                placeholder="Insert Lifespan"
               />
             </label>
             <label>
@@ -197,7 +197,7 @@ export default function Form() {
                 name="temperament"
                 value={formData.temperament}
                 onChange={handleChange}
-                placeholder="Inserte Temperamentos"
+                placeholder="Insert Tempers"
               />
             </label>
             <button type="submit" className={style.button}>

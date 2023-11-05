@@ -57,7 +57,7 @@ export const allDogs = () => {
 };
 export function orderDogs(order) {
   return (dispatch) => {
-    returndispatch({
+    return dispatch({
       type: ORDER,
       payload: order,
     });

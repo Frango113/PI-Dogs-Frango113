@@ -12,7 +12,7 @@ export default function Detail() {
       if (data.name) {
         setCharacter(data);
       } else {
-        window.alert("No hay personajes con ese ID");
+        window.alert("No dogs with this ID: ");
       }
     });
     return setCharacter({});
@@ -26,7 +26,7 @@ export default function Detail() {
       <div className={style.component}>
         <h1 className={style.id}>{character.id && character.id}</h1>
         <img
-          src={character.image && character.image}
+          src={character.imagen && character.imagen}
           alt={character.name}
         ></img>
         <h1 className={style.name}>{character.name && character.name}</h1>
@@ -50,7 +50,7 @@ export default function Detail() {
         </p>
         {character.breed_for && (
           <p className={style.data}>
-            <span>Rasie To: </span>
+            <span>Raised To: </span>
             <span className={style.value}>
               {character.breed_for && character.breed_for}
             </span>
