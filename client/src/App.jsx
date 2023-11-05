@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
-import style from "./App.css";
+import style from "./App.module.css";
 //? importaciones REDUX
 import { useDispatch, useSelector } from "react-redux";
 import { clearDogs, allDogs } from "./Redux/actions";
@@ -10,6 +10,7 @@ import LandingPage from "./Components/Landing/LandingPage";
 import Cards from "./Components/Cards/Cards";
 import Navbar from "./Components/Navbar/NavBar";
 import Detail from "./Detail/Detail";
+import Footer from "./Components/Footer/Footer";
 
 export default function App() {
   const dogs = useSelector((state) => state.dogs);
@@ -35,6 +36,7 @@ export default function App() {
             <>
               <Navbar />
               <Cards dogs={dogs}></Cards>
+              <Footer />
             </>
           }
         />
@@ -43,6 +45,7 @@ export default function App() {
           element={
             <>
               <Navbar />
+              <Footer />
             </>
           }
         />
@@ -52,6 +55,7 @@ export default function App() {
             <>
               <Navbar />
               <Detail />
+              <Footer />
             </>
           }
         />

@@ -5,7 +5,7 @@
     grid-template-columns: 110px 110px 110px;
     gap: 17px;
     background-color: rgba(0, 0, 0, 0.445);
-    background: linear-gradient(black, black) padding-box,
+    background: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255)) padding-box,
     linear-gradient(45deg, white, rgb(0, 10, 143)) border-box;
     margin-right: 60px;
   }
@@ -24,15 +24,10 @@
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     -webkit-text-stroke: 1px;
-    text-shadow:
-    -10px -1px 0 #000, /* Sombra superior izquierda */
-     1px -1px 0 #000, /* Sombra superior derecha */
-    -10px  1px 0 #000, /* Sombra inferior izquierda */
-     1px  1px 0 #000; /* Sombra inferior derecha */
-    font-family: 'Audiowide', cursive;
+     font-family: 'Pixelify Sans', sans-serif;
     border-radius: 20px;
     border: 5px solid transparent;
-    background: linear-gradient(black, black) padding-box,
+    background: linear-gradient(rgb(156, 156, 156), rgb(134, 134, 134)) padding-box,
     linear-gradient(45deg, white, rgb(0, 10, 143)) border-box;
   }
 
@@ -51,14 +46,10 @@
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     -webkit-text-stroke: 1px;
-    text-shadow:
-    -10px -1px 0 #000, /* Sombra superior izquierda */
-     1px -1px 0 #000, /* Sombra superior derecha */
-    -10px  1px 0 #000, /* Sombra inferior izquierda */
-     1px  1px 0 #000; /* Sombra inferior derecha */
-    font-family: 'Audiowide', cursive;
+   
+    font-family: 'Pixelify Sans', sans-serif;
     border-radius: 20px;
     border: 5px solid transparent;
-    background: linear-gradient(black, black) padding-box,
+    background: linear-gradient(rgb(126, 126, 126), rgb(104, 103, 103)) padding-box,
     linear-gradient(45deg, white, rgb(0, 10, 143)) border-box;
   }

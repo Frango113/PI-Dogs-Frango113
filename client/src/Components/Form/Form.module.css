@@ -2,8 +2,8 @@
     display: grid;
     align-items: start;
     grid-template-columns: repeat(1fr, 7);
-    color:  rgba(255,214,127,1);
-    background: -webkit-linear-gradient(45deg, rgba(255,214,127,1), white) border-box;
+    color:  rgb(0, 10, 143);
+    background: -webkit-linear-gradient(45deg, rgb(0, 10, 143), white) border-box;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     -webkit-text-stroke: 1px;
@@ -23,7 +23,7 @@
     height: 15px;
     font-size: 14px;
     align-self: center;
-    box-shadow: 2px 1px 2px 2px rgba(255,214,127,1);
+    box-shadow: 2px 1px 2px 2px rgb(0, 10, 143);
     background-color: transparent;
     color: white;
     font-size: large;
@@ -41,7 +41,7 @@
   }
   
     .container:hover {
-      box-shadow: 3px 3px 20px #ffffff, -3px -3px 20px rgba(255,214,127,1);
+      box-shadow: 3px 3px 20px #ffffff, -3px -3px 20px rgb(0, 10, 143);
   }
   
   .container{
@@ -53,7 +53,7 @@
     width: 1150px;
     height: 820px;
     border-radius: 20px;
-    border: 5px solid rgba(255,214,127,1);
+    border: 5px solid rgb(0, 10, 143);
     background: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente */
     backdrop-filter: blur(7px);
     margin-top: 140px;
@@ -70,8 +70,8 @@
     cursor: pointer;
     margin-right: 10px;
     transition: 200ms;
-    color: rgba(255,214,127,1);
-    background: -webkit-linear-gradient(45deg, #ffffff, rgba(255,214,127,1)) border-box;
+    color: rgb(0, 10, 143);
+    background: -webkit-linear-gradient(45deg, #ffffff, rgb(0, 10, 143)) border-box;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     -webkit-text-stroke: 1px;
@@ -80,8 +80,8 @@
      1px -1px 0 #000, /* Sombra superior derecha */
     -10px  1px 0 #000, /* Sombra inferior izquierda */
      1px  1px 0 #000; /* Sombra inferior derecha */
-    font-family: 'Audiowide', cursive;
-    box-shadow: 2px 1px 2px 2px rgba(255,214,127,1);
+    font-family: 'Pixelify Sans', sans-serif;;
+    box-shadow: 2px 1px 2px 2px rgb(0, 10, 143);
     text-decoration: none;
     font-size: larger;
     padding: 5px 5px 5px 11px;
@@ -91,7 +91,7 @@
   
   
   label{
-    box-shadow: 3px 3px 20px #ffffff, -3px -3px 20px rgba(255,214,127,1);
+    box-shadow: 3px 3px 20px #ffffff, -3px -3px 20px rgb(0, 10, 143);
     margin-top: 40px;
     padding-bottom: 10px;
     padding-top: 10px;
@@ -104,8 +104,8 @@
   .add {
     display: block;
     position: absolute;
-    color: rgba(255,214,127,1);
-    background: -webkit-linear-gradient(45deg, #ffffff, rgba(255,214,127,1)) border-box;
+    color: rgb(0, 10, 143);
+    background: -webkit-linear-gradient(45deg, #ffffff, rgb(0, 10, 143)) border-box;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     -webkit-text-stroke: 1px;
@@ -114,7 +114,7 @@
      1px -1px 0 #000, /* Sombra superior derecha */
     -10px  1px 0 #000, /* Sombra inferior izquierda */
      1px  1px 0 #000; /* Sombra inferior derecha */
-    font-family: 'Audiowide', cursive;
+    font-family: 'Pixelify Sans', sans-serif;;
     text-decoration: none;
     font-size: 50px; 
     transition: 200ms;
@@ -149,7 +149,7 @@
      1px -1px 0 #000, /* Sombra superior derecha */
     -10px  1px 0 #000, /* Sombra inferior izquierda */
      1px  1px 0 #000; /* Sombra inferior derecha */
-    font-family: 'Audiowide', cursive;
+    font-family: 'Pixelify Sans', sans-serif;;
     text-decoration: none;
     font-size: larger; 
     transition: 200ms;
@@ -182,7 +182,7 @@
   font-size: large;
   border: none;
   padding-top: 6px;
-  font-family: 'Audiowide', cursive;
+  font-family: 'Pixelify Sans', sans-serif;;
   }
   
   .back:hover {

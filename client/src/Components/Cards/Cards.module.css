@@ -24,7 +24,7 @@
      1px -1px 0 #000, /* Sombra superior derecha */
     -10px  1px 0 #000, /* Sombra inferior izquierda */
      1px  1px 0 #000; /* Sombra inferior derecha */
-    font-family: 'Audiowide', cursive;
+    font-family: 'Pixelify Sans', sans-serif;
     font-size: 20px;
     margin-right: 25px;
     margin-left: 25px;
@@ -39,7 +39,7 @@
     -webkit-background-clip: text;
     -webkit-text-stroke: 2px;
     border-color: rgb(0, 10, 143);
-    font-family: 'Audiowide', cursive;
+    font-family: 'Pixelify Sans', sans-serif;
     font-size: 20px;
   }
 
@@ -55,7 +55,7 @@
      1px -1px 0 #000, /* Sombra superior derecha */
     -1px  1px 0 #000, /* Sombra inferior izquierda */
      1px  1px 0 #000; /* Sombra inferior derecha */
-    font-family: 'Audiowide', cursive;
+    font-family: 'Pixelify Sans', sans-serif;
     font-size: 20px;
   }
 

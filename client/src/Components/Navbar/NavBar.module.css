@@ -15,7 +15,7 @@
     background-color: rgba(45, 45, 45, 0.699);
     z-index: 2;
     border-top: 5px solid transparent;
-    background: linear-gradient(black, black) padding-box,
+    background: linear-gradient(rgb(94, 93, 93), rgb(146, 146, 146)) padding-box,
     linear-gradient(45deg, white, rgb(0, 10, 143)) border-box;
   }
   
@@ -52,7 +52,7 @@
      1px -1px 0 #000, /* Sombra superior derecha */
     -10px  1px 0 #000, /* Sombra inferior izquierda */
      1px  1px 0 #000; /* Sombra inferior derecha */
-    font-family: 'Audiowide', cursive;
+     font-family: 'Pixelify Sans', sans-serif;
     box-shadow: 2px 1px 2px 2px rgb(0, 10, 143);
     text-decoration: none;
     padding-right: 10px;
