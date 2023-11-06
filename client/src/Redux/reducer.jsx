@@ -220,7 +220,7 @@ export default function rootReducer(state = initialState, action) {
       if (payload === "All") {
         return {
           ...state,
-          dogs: state.allDOgs,
+          dogs: state.allDogs,
           orderAndFilter: {
             ...state.orderAndFilter,
             tempFilter: payload,

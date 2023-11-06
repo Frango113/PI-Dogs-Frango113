@@ -43,7 +43,7 @@
     align-self: center;
     margin-top: -50px;
     padding: 0;
-    background: -webkit-linear-gradient(45deg, white,rgb(0, 10, 143)) border-box;
+    background: -webkit-linear-gradient(45deg, rgb(0, 0, 0),rgb(0, 10, 143)) border-box;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
   }
@@ -74,7 +74,7 @@
     padding-top: 70px;
     font-size: 20px;
     padding-bottom: 20px;
-    background: -webkit-linear-gradient(45deg, white,rgb(0, 10, 143)) border-box;
+    background: -webkit-linear-gradient(45deg, rgb(0, 0, 0),rgb(0, 10, 143)) border-box;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
   }
@@ -91,7 +91,7 @@
     font-size: 20px;
     margin-top: -50px;
     padding-top: 10px;
-    background: -webkit-linear-gradient(45deg, white,rgb(0, 10, 143)) border-box;
+    background: -webkit-linear-gradient(45deg, rgb(0, 0, 0),rgb(0, 10, 143)) border-box;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     padding-top: 60px;

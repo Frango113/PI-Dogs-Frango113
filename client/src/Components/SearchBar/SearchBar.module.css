@@ -1,5 +1,5 @@
 .searchBar {
-    display: grid;
+    display:grid;
     justify-self: center;
     align-content: center;
     align-self: center;
@@ -31,11 +31,7 @@
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     -webkit-text-stroke: 1px;
-    text-shadow:
-    -10px -1px 0 #000, /* Sombra superior izquierda */
-     1px -1px 0 #000, /* Sombra superior derecha */
-    -10px  1px 0 #000, /* Sombra inferior izquierda */
-     1px  1px 0 #000; /* Sombra inferior derecha */
+   
     font-family: 'Audiowide', cursive;
     font-size: 18px;
   }

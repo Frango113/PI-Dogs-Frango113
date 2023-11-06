@@ -7,6 +7,7 @@ import style from "./NavBar.module.css";
 import Form from "../Form/Form";
 import Filter from "./Filter";
 import SearchBar from "../SearchBar/SearchBar";
+import Logo from "../../assets/logo.png";
 
 export default function Navbar({ onSearch }) {
   const dispatch = useDispatch();
@@ -14,7 +15,7 @@ export default function Navbar({ onSearch }) {
 
   function clear() {
     dispatch(clearDogs());
-    createDispatchHook(allDogs);
+    dispatch(allDogs);
   }
 
   function toggleFormVisibility() {
@@ -24,27 +25,32 @@ export default function Navbar({ onSearch }) {
   return (
     <div className={style.container}>
       <div className={style.Navbar}>
-        <Link
-          to="/home"
-          onClick={() => {
-            clear();
-          }}
-        ></Link>
-      </div>
-      <Filter />
-      <SearchBar onSearch={onSearch} className={style.search}></SearchBar>
-      <div className={style.buttons}>
-        <Link
-          to="/home"
-          onClick={() => {
-            clear();
-          }}
-          className={style.aboutButton}
-        >
-          <h3>RESET</h3>
-        </Link>
-        <div onClick={toggleFormVisibility} className={style.aboutButton}>
-          <h3>CREATE</h3>
+        <div className={style.logo}>
+          <Link
+            to="/home"
+            onClick={() => {
+              clear();
+            }}
+          >
+            <img src={Logo}></img>
+          </Link>
+        </div>
+
+        <Filter />
+        <SearchBar onSearch={onSearch} className={style.search} />
+        <div className={style.buttons}>
+          <Link
+            to="/home"
+            onClick={() => {
+              clear();
+            }}
+            className={style.aboutButton}
+          >
+            <h3>RESET</h3>
+          </Link>
+          <div onClick={toggleFormVisibility} className={style.aboutButton}>
+            <h3>CREATE</h3>
+          </div>
         </div>
       </div>
       {isFormVisible && <Form />}

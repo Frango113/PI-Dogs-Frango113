@@ -10,7 +10,7 @@ const router = require("express").Router();
 
 router.use("/dogs", dogRoutes);
 router.use("/temper", temperRoute);
-router.get("/dogname", async (req, res) => {
+router.get("/s/name", async (req, res) => {
   const name = req.query;
   try {
     const dogName = await dogsController.searchDogsByName(name);

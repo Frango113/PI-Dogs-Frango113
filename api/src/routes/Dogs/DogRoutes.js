@@ -9,7 +9,7 @@ router.get("/", async (req, res) => {
     return res.statusMessage(404).json({ error: error.message });
   }
 });
-router.get("/createrd", async (req, res) => {
+router.get("/created", async (req, res) => {
   try {
     const response = await dogsController.dbDogs();
     return res.status(200).json(response);

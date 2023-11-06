@@ -11,6 +11,7 @@ import {
 } from "../../Redux/actions";
 import { useSelector } from "react-redux";
 import style from "./SearchBar.Module.css";
+import searchicon from "../../assets/search.png";
 
 export default function SearchBar() {
   const [name, setName] = useState("");
@@ -47,7 +48,9 @@ export default function SearchBar() {
         value={name}
         onChange={HandleChange}
       ></input>
-      <button className={style.search} onClick={() => onSearch(name)}></button>
+      <button className={style.search} onClick={() => onSearch(name)}>
+        <img src={searchicon}></img>
+      </button>
     </div>
   );
 }

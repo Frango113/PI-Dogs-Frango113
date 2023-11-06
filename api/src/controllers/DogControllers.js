@@ -78,9 +78,11 @@ const getDetail = async (id) => {
         id: dogData.id,
         name: dogData.name,
         imagen: `https://cdn2.thedogapi.com/images/${dogData.reference_image_id}.jpg`,
-        height: dogData.height.metric,
+        height: dogData.height.imperial,
         weight:
-          dogData.weight.metric === "NaN" ? "10 - 15" : dogData.weight.metric,
+          dogData.weight.imperial === "NaN"
+            ? "25 - 40"
+            : dogData.weight.imperial,
         life_span: dogData.life_span,
         breed_for: dogData.bred_for,
         breed_group: dogData.breed_group,

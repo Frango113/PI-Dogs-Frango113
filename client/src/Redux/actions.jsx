@@ -36,6 +36,7 @@ export const dogById = (id) => {
       const dataArray = [data];
       return dispatch({
         type: DOGBYID,
+        payload: dataArray,
       });
     } catch (error) {
       console.error("There was a problem fetching a dog by its ID ");
