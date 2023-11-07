@@ -58,7 +58,7 @@ export default function Filter() {
       >
         <option value="all">ALL</option>
         <option value="real">API</option>
-        <option value="created">CREADOS</option>
+        <option value="created">CREATED</option>
       </select>
       <button onClick={() => handleFilterByLife("short")}>Short Life</button>
       <button onClick={() => handleFilterByLife("Medium")}>Medium Life</button>

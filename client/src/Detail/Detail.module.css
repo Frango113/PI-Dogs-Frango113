@@ -24,6 +24,7 @@
     transition: 200ms;
     background: transparent;
     backdrop-filter: blur(6px);
+    z-index: 2
   }
   
   .component:hover {

@@ -9,7 +9,7 @@ import {
   CLEAR_DOGS,
   FILTER_ORIGIN,
   FILTER_LIFE,
-} from "../Redux/actiontypes";
+} from "../Redux/actions";
 
 let initialState = {
   dogs: [],

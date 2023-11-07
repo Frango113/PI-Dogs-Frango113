@@ -34,6 +34,7 @@ const getAllDogs = async () => {
         temperament: dog?.temperament,
       };
     });
+
     const dbDogs = await Dog.findAll();
 
     allDogs = [...dbDogs, ...apiDogs].sort((a, b) =>
@@ -155,7 +156,7 @@ const getDogBreeds = async (req, res) => {
 };
 
 async function searchDogsByName(name) {
-  if (!name) throw new Error("No se ha pasado ningun nomre...");
+  if (!name) throw new Error("You need to insert a name");
 
   try {
     let apiResponse = await axios(
