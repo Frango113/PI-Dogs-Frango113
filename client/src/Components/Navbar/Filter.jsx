@@ -56,7 +56,7 @@ export default function Filter() {
         value={originFilter}
         onChange={handleFilterByOrigin}
       >
-        <option value="all">ALL</option>
+        {/* <option value="all">ALL</option> */}
         <option value="real">API</option>
         <option value="created">CREATED</option>
       </select>

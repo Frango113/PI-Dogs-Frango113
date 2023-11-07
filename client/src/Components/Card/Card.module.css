@@ -11,8 +11,8 @@
     border: 5px solid transparent;
     border: 5px solidrgb(0, 10, 143);
     background: transparent;
-    backdrop-filter: blur(6px);
-    box-shadow: 0px 10px 15pxrgb(0, 10, 143);
+    backdrop-filter: blur(48px);
+    box-shadow: 0px 10px 15px rgb(0, 10, 143);
   }
   
   .component:hover {
@@ -107,13 +107,13 @@
     color:rgb(0, 10, 143);
     border: 2px solid transparent;
     background: linear-gradient(rgb(180, 176, 176), rgb(104, 104, 104)) padding-box,
-    linear-gradient(45deg, #fff,rgb(0, 10, 143)) border-box;
-    box-shadow: 2px 1px 2px 2pxrgb(0, 10, 143);
+    linear-gradient(45deg, rgb(0,10,143),rgb(0, 10, 143)) border-box;
+    box-shadow: 1px 1px 1px 1px rgb(0, 10, 143);
     transition: 200ms;
     cursor: pointer;
     font-weight: bolder;
     font-family: 'Pixelify Sans', sans-serif;
-    padding-right: 71px;
+    padding-right: 40px;
     margin-top: 85px;
   }
   

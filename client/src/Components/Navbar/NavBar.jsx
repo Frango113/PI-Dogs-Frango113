@@ -39,7 +39,7 @@ export default function Navbar({ onSearch }) {
         <Filter />
         <SearchBar onSearch={onSearch} className={style.search} />
         <div className={style.buttons}>
-          <Link
+          {/* <Link
             to="/home"
             onClick={() => {
               clear();
@@ -47,7 +47,7 @@ export default function Navbar({ onSearch }) {
             className={style.aboutButton}
           >
             <h3>RESET</h3>
-          </Link>
+          </Link> */}
           <div onClick={toggleFormVisibility} className={style.aboutButton}>
             <h3>CREATE</h3>
           </div>
