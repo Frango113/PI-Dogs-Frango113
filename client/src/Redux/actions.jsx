@@ -8,15 +8,17 @@ export const ALLTEMP = "ALLTEMP";
 export const CLEAR_DOGS = "CLEAR_DOGS";
 export const FILTER_ORIGIN = "FILTER_ORIGIN";
 export const FILTER_LIFE = "FILTER_LIFE";
+export const RESTART = "RESET";
 
 import axios from "axios";
 
 const endpoint = "http://localhost:3001";
 
 export const dogByName = (name) => {
+  console.log(name);
   return async (dispatch) => {
     try {
-      const { data } = await axios(`${endpoint}/dogs/s/name=name=$`);
+      const { data } = await axios(`${endpoint}/s/name?name=${name}`);
       return dispatch({
         type: DOGBYNAME,
         payload: data,
@@ -30,6 +32,7 @@ export const dogByName = (name) => {
 };
 
 export const dogById = (id) => {
+  //console.log(id);
   return async (dispatch) => {
     try {
       const { data } = await axios(`${endpoint}/dogs/${id}`);
@@ -102,6 +105,13 @@ export const filterLife = (life) => {
     return dispatch({
       type: FILTER_LIFE,
       payload: life,
+    });
+  };
+};
+export const Restart = () => {
+  return (dispatch) => {
+    return dispatch({
+      type: RESTART,
     });
   };
 };

@@ -4,6 +4,7 @@ import style from "./Card.module.css";
 
 export default function Card(props) {
   const { id, name, weight, image, temperament } = props;
+  console.log(props);
 
   let newTemp = temperament?.length > 0 ? temperament.split(", ") : "unknown";
   let shortTemp = newTemp[0];

@@ -9,6 +9,7 @@ import {
   CLEAR_DOGS,
   FILTER_ORIGIN,
   FILTER_LIFE,
+  RESTART,
 } from "../Redux/actions";
 
 let initialState = {
@@ -26,7 +27,7 @@ export default function rootReducer(state = initialState, action) {
       return {
         ...state,
         dogs: payload,
-        allDOgs: payload,
+        allDogs: payload,
         searchError: false,
         orderAndFilter: {
           order: "A",
@@ -44,7 +45,7 @@ export default function rootReducer(state = initialState, action) {
     case ALLDOGS:
       let result = [];
       payload.forEach((dog) => {
-        let words = dog.temperament.split(", ");
+        let words = dog.temperament ? dog.temperament.split(", ") : [];
         let firstWord = words[0];
         if (!result.includes(firstWord)) {
           result.push(firstWord);
@@ -55,12 +56,6 @@ export default function rootReducer(state = initialState, action) {
         allDogs: payload,
         dogs: payload,
         temperament: result,
-      };
-    case CLEAR_DOGS:
-      return {
-        ...state,
-        allDogs: [],
-        dogs: [],
       };
     case ALLTEMP:
       return { ...state, temperament: payload };
@@ -89,21 +84,21 @@ export default function rootReducer(state = initialState, action) {
           orderedDogs?.sort((a, b) => {
             let pesoA;
             let pesoB;
-
             if (!a.weight) {
-              pesoA = a.peso?.split(" - ");
-              pesoA = pesoA.length > 1 ? pesoA[1] : pesoA[0];
+              pesoA =
+                a.peso?.split("-")[1]?.trim() || a.peso?.split("-")[0]?.trim();
             } else {
-              pesoA = a.weight?.split(" - ");
-              pesoA = pesoA.length > 1 ? pesoA[1] : pesoA[0];
+              pesoA =
+                a.weight?.split("-")[1]?.trim() ||
+                a.weight?.split("-")[0]?.trim();
             }
-
             if (!b.weight) {
-              pesoB = b.peso?.split(" - ");
-              pesoB = pesoB.length > 1 ? pesoB[1] : pesoB[0];
+              pesoB =
+                b.peso?.split("-")[1]?.trim() || b.peso?.split("-")[0]?.trim();
             } else {
-              pesoB = b.weight?.split(" - ");
-              pesoB = pesoB.length > 1 ? pesoB[1] : pesoB[0];
+              pesoB =
+                b.weight?.split("-")[1]?.trim() ||
+                b.weight?.split("-")[0]?.trim();
             }
             return parseInt(pesoA) - parseInt(pesoB);
           });
@@ -111,29 +106,29 @@ export default function rootReducer(state = initialState, action) {
             let pesoA;
             let pesoB;
             if (!a.weight) {
-              pesoA = a.peso?.split(" - ");
-              pesoA = pesoA.length > 1 ? pesoA[1] : pesoA[0];
+              pesoA =
+                a.peso?.split("-")[1]?.trim() || a.peso?.split("-")[0]?.trim();
             } else {
-              pesoA = a.weight?.split(" - ");
-              pesoA = pesoA.length > 1 ? pesoA[1] : pesoA[0];
+              pesoA =
+                a.weight?.split("-")[1]?.trim() ||
+                a.weight?.split("-")[0]?.trim();
             }
-
             if (!b.weight) {
-              pesoB = b.peso?.split(" - ");
-              pesoB = pesoB.length > 1 ? pesoB[1] : pesoB[0];
+              pesoB =
+                b.peso?.split("-")[1]?.trim() || b.peso?.split("-")[0]?.trim();
             } else {
-              pesoB = b.weight?.split(" - ");
-              pesoB = pesoB.length > 1 ? pesoB[1] : pesoB[0];
+              pesoB =
+                b.weight?.split("-")[1]?.trim() ||
+                b.weight?.split("-")[0]?.trim();
             }
-
-            return parseInt(pesoA[0]) - parseInt(pesoB[0]);
+            return parseInt(pesoA) - parseInt(pesoB);
           });
+
           break;
         case "maxWeight":
           orderedDogs?.sort((a, b) => {
             let pesoA;
             let pesoB;
-
             if (!a.weight) {
               pesoA = a.peso?.split(" - ");
               pesoA = pesoA.length > 1 ? pesoA[1] : pesoA[0];
@@ -141,7 +136,6 @@ export default function rootReducer(state = initialState, action) {
               pesoA = a.weight?.split(" - ");
               pesoA = pesoA.length > 1 ? pesoA[1] : pesoA[0];
             }
-
             if (!b.weight) {
               pesoB = b.peso?.split(" - ");
               pesoB = pesoB.length > 1 ? pesoB[1] : pesoB[0];
@@ -149,10 +143,8 @@ export default function rootReducer(state = initialState, action) {
               pesoB = b.weight?.split(" - ");
               pesoB = pesoB.length > 1 ? pesoB[1] : pesoB[0];
             }
-
             return parseInt(pesoB) - parseInt(pesoA);
           });
-
           orderedAllDogs?.sort((a, b) => {
             let pesoA;
             let pesoB;
@@ -163,7 +155,6 @@ export default function rootReducer(state = initialState, action) {
               pesoA = a.weight?.split(" - ");
               pesoA = pesoA.length > 1 ? pesoA[1] : pesoA[0];
             }
-
             if (!b.weight) {
               pesoB = b.peso?.split(" - ");
               pesoB = pesoB.length > 1 ? pesoB[1] : pesoB[0];
@@ -171,11 +162,9 @@ export default function rootReducer(state = initialState, action) {
               pesoB = b.weight?.split(" - ");
               pesoB = pesoB.length > 1 ? pesoB[1] : pesoB[0];
             }
-
             return parseInt(pesoB) - parseInt(pesoA);
           });
           break;
-
         default:
           break;
       }
@@ -278,6 +267,11 @@ export default function rootReducer(state = initialState, action) {
           tempFilter: "All",
         },
         searchError: filteredDogsByLife.length > 0 ? false : true,
+      };
+    case RESTART:
+      return {
+        ...state,
+        dogs: state.allDogs,
       };
     default:
       return { ...state };

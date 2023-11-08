@@ -2,7 +2,7 @@ const dogRoutes = require("./Dogs/DogRoutes");
 const temperRoute = require("./Temperaments/TemperRoute");
 const dogsController = require("../controllers/DogControllers");
 const getTempers = require("../controllers/TemperControllers");
-const searchDogsByName = require("../controllers/DogControllers");
+
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
 const router = require("express").Router();
@@ -29,9 +29,17 @@ router.get("/dogs/:id", async (req, res) => {
   }
 });
 router.get("/s/name", async (req, res) => {
-  const name = req.query;
+  const { name } = req.query;
+  const nameWords = name.split(" ");
+  const ModifiedName = nameWords
+    .map((string) => {
+      const firstLetter = string.charAt(0).toUpperCase();
+      const restOfWord = string.slice(1).toLowerCase();
+      return firstLetter + restOfWord;
+    })
+    .join(" ");
   try {
-    const dogName = await searchDogsByName(name);
+    const dogName = await dogsController.searchDogsByName(ModifiedName);
     return res.status(201).json(dogName);
   } catch (error) {
     return res.status(400).json(error.message);

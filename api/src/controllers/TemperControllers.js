@@ -8,7 +8,7 @@ const getTempers = async () => {
       `https://api.thedogapi.com/v1/breeds?api_key=${apikey}`
     );
     const dogBreeds = response.data;
-    console.log(dogBreeds);
+    //console.log(dogBreeds);
     const uniqueTemperaments = new Set();
 
     dogBreeds.forEach((breed) => {
@@ -25,13 +25,13 @@ const getTempers = async () => {
     //console.log(breedTemperaments);
 
     const temperArray = Array.from(uniqueTemperaments);
-    console.log(temperArray);
+    //console.log(temperArray);
     await Temperament.bulkCreate(
       temperArray.map((temperament) => ({
         Nombre: temperament,
       }))
     );
-    console.log("Tempers have been succesfully saved in the database ");
+    //console.log("Tempers have been succesfully saved in the database ");
   } catch (error) {
     console.error("There was an error while fetching and saving the tempers: ");
   }

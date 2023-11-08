@@ -1,5 +1,5 @@
 const axios = require("axios");
-const { Dog } = require("../db");
+const { Dog, Temperament } = require("../db");
 const { Op } = require("sequelize");
 const { apikey } = process.env;
 
@@ -34,12 +34,32 @@ const getAllDogs = async () => {
         temperament: dog?.temperament,
       };
     });
+    async function saveAllDogs() {
+      const dbDogs = await Dog.findAll({
+        include: {
+          model: Temperament,
+        },
+      });
+      return dbDogs;
+    }
 
-    const dbDogs = await Dog.findAll();
-
-    allDogs = [...dbDogs, ...apiDogs].sort((a, b) =>
-      a.name.localeCompare(b.name)
-    );
+    const allDogsArray = await saveAllDogs();
+    console.log(allDogsArray);
+    const listDbDog = allDogsArray.map((dog) => {
+      return {
+        id: dog.dataValues.id,
+        image: dog.dataValues.imagen,
+        name: dog.dataValues.name,
+        height: dog.dataValues.altura,
+        weight: dog.dataValues.peso,
+        life_span: dog.dataValues.life_span,
+        temperament: dog.dataValues.Temperaments.map(
+          (temp) => temp.Nombre
+        ).join(", "),
+      };
+    });
+    console.log("importante", listDbDog);
+    allDogs = [...listDbDog, ...apiDogs];
 
     return allDogs;
   } catch (error) {
@@ -108,16 +128,29 @@ const addDog = async (dog) => {
       altura: dog.altura,
       peso: dog.peso,
       life_span: dog.life_span,
-      temperament: dog.temperament,
     });
+    if (dog.temperament && dog.temperament.length > 0) {
+      for (const temp of dog.temperament) {
+        const associationTemperament = await Temperament.findOne({
+          where: {
+            Nombre: temp,
+          },
+        });
 
+        if (associationTemperament) {
+          await newDog.addTemperament(associationTemperament);
+        }
+      }
+    }
+
+    return newDog;
     await newDog.save();
 
     const allDogs = await Dog.findAll();
 
     return allDogs;
   } catch (error) {
-    throw new Error("Dog could not be created");
+    throw new Error(error.message);
   }
 };
 
@@ -154,47 +187,57 @@ const getDogBreeds = async (req, res) => {
       .json({ error: "There was an error while attempting to fetch breeds. " });
   }
 };
-
+//! Funcione que busca por nombre!//
 async function searchDogsByName(name) {
+  //console.log(name);
   if (!name) throw new Error("You need to insert a name");
 
   try {
-    let apiResponse = await axios(
-      `https://api.thedogapi.com/v1/breeds/search?q=${name}&api_key=${apikey}`
-    );
-
+    let apiResponse = await axios("https://api.thedogapi.com/v1/breeds");
+    //console.log(apiResponse.data);
     apiResponse = apiResponse.data;
+    const NameDog = apiResponse.filter((dog) => dog.name.includes(name));
+    //console.log(NameDog);
+    if (NameDog.length > 0) {
+      const dogs = NameDog.map((dog) => ({
+        name: dog.name,
+        id: dog.id,
+        life: dog.life_span,
+        imagen: `https://cdn2.thedogapi.com/images/${dog.reference_image_id}.jpg`,
+        weight: dog.weight.imperial,
+        height: dog.height.imperial,
+        temperament: dog.temperament,
+      }));
+      //return dogs;
 
-    const imageRequests = apiResponse.map(async (e) => {
-      let imageId = e?.reference_image_id;
-      if (imageId) {
-        let res = await axios(`https://api.thedogapi.com/v1/images/${imageId}`);
-
-        return res.data.url;
-      } else return undefined;
-    });
-    const imageResponses = await Promise.all(imageRequests);
-
-    let dbResponse = await Dog.findAll({
-      where: {
-        name: {
-          [Op.iLike]: `%${name}%`,
+      let dbResponse = await Dog.findAll({
+        where: {
+          name: {
+            [Op.like]: `%${name}%`,
+          },
         },
-      },
-    });
-    let result = apiResponse.map((dog, index) => ({
-      ...dog,
-      imagen: imageResponses[index],
-      origin: dog?.origin,
-      height: dog.height.imperial,
-      weight: dog.weight.imperial === "NaN" ? "25-40" : dog.weight.imperial,
-    }));
+        include: Temperament,
+      });
 
-    let allSearchedDogs = [...dbResponse, ...result];
-    if (allSearchedDogs.length === 0) {
-      throw new Error("There is no dogs with this name");
+      const { id, imagen, altura, peso, life_span } = dbResponse;
+      const DogDb = {
+        id: id,
+        name: name,
+        image: imagen,
+        height: altura,
+        weight: peso,
+        life_span: life_span,
+      };
+      if (DogDb > 0) {
+        let allSearchedDogs = [DogDb, ...dogs];
+        if (allSearchedDogs.length === 0) {
+          throw new Error("There is no dogs with this name");
+        }
+        return allSearchedDogs;
+      } else {
+        return dogs;
+      }
     }
-    return allSearchedDogs;
   } catch (error) {
     throw new Error(error);
   }

@@ -17,6 +17,7 @@ export default function Filter() {
   );
 
   const handleOrder = (event) => {
+    console.log(event.target.value);
     dispatch(orderDogs(event.target.value));
   };
   const handleFilterByTemp = (event) => {
@@ -35,7 +36,7 @@ export default function Filter() {
         <option value="A">A-Z</option>
         <option value="D">Z-A</option>
         <option value="maxWeight">HEAVIEST</option>
-        <option value="minweight">LIGHTEST</option>
+        <option value="minWeight">LIGHTEST</option>
       </select>
       <select
         name="filterTemp"
@@ -43,20 +44,21 @@ export default function Filter() {
         onChange={handleFilterByTemp}
       >
         <option value="All">ALL</option>
-        {temperament.map((temp) => {
-          return (
-            <option value={temp} key={temp}>
-              {temp.toUpperCase()}
-            </option>
-          );
-        })}
+        {temperament &&
+          temperament.map((temp) => {
+            return (
+              <option value={temp} key={temp}>
+                {temp && temp.toUpperCase()}
+              </option>
+            );
+          })}
       </select>
       <select
         name="filterOrigin"
         value={originFilter}
         onChange={handleFilterByOrigin}
       >
-        {/* <option value="all">ALL</option> */}
+        <option value="all">ALL</option>
         <option value="real">API</option>
         <option value="created">CREATED</option>
       </select>

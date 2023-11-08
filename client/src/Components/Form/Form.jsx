@@ -67,6 +67,7 @@ export default function Form() {
           life_span: formData.life_span,
           temperament: formData.temperament,
         };
+        console.log(newDog);
         const response = await axios.post(
           "http://localhost:3001/dogs/",
           newDog

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 //! IMPORT SEARCHBAR HERE
 import { useDispatch } from "react-redux";
-import { clearDogs, allDogs } from "../../Redux/actions";
+import { clearDogs, allDogs, Restart } from "../../Redux/actions";
 import style from "./NavBar.module.css";
 import Form from "../Form/Form";
 import Filter from "./Filter";
@@ -20,6 +20,10 @@ export default function Navbar({ onSearch }) {
 
   function toggleFormVisibility() {
     setIsFormVisible(!isFormVisible);
+  }
+
+  function resetDogs() {
+    dispatch(Restart());
   }
 
   return (
@@ -40,14 +44,16 @@ export default function Navbar({ onSearch }) {
         <SearchBar onSearch={onSearch} className={style.search} />
         <div className={style.buttons}>
           {/* <Link
-            to="/home"
+            to="/home" */}
+          <button
             onClick={() => {
-              clear();
+              resetDogs();
             }}
             className={style.aboutButton}
           >
-            <h3>RESET</h3>
-          </Link> */}
+            <h3>RESET</h3>/
+          </button>
+          {/*</div></Link>*/}
           <div onClick={toggleFormVisibility} className={style.aboutButton}>
             <h3>CREATE</h3>
           </div>

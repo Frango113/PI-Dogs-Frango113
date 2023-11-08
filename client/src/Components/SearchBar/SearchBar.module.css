@@ -45,6 +45,8 @@
     margin-left: 20px;
     border-radius: 50%;
     border: 0;
+    position: relative;
+    z-index: 1;
   }
   
   .search:hover {

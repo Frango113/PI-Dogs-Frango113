@@ -18,9 +18,9 @@ export default function App() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    dispatch(clearDogs());
+    //dispatch(clearDogs());
     dispatch(allDogs());
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     dispatch(clearDogs) && navigate("/");

@@ -25,17 +25,14 @@ export default function SearchBar() {
 
     setName(input);
   }
-
+  const Numerico = Number(name);
+  //console.log(Numerico);
   const onSearch = async (event) => {
     clearDogs();
-    if (name.length > 3) {
-      await dispatch(dogByName(name));
-      dispatch(orderDogs(order));
-    } else if (name.length === 0) {
-      dispatch(dogById(1));
+    if (Numerico) {
+      dispatch(dogById(Numerico));
     } else {
-      dispatch(clearDogs());
-      dispatch(dogById(name));
+      dispatch(dogByName(name));
     }
     dispatch(filterTemperaments("All"));
   };
